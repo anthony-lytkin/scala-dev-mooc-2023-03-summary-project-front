@@ -1,12 +1,10 @@
-import React from 'react';
-import Layout from '../components/Layout/Layout';
+import React from "react";
+import Layout from "../components/Layout/Layout";
+import { isAuthorized } from "../core/constants/global";
+import AuthorizationPage from "./AuthorizationPage";
 
 const MainPage: React.FC = () => {
-    
-
-    return <Layout />
-
-
+    if ({isAuthorized}) { return <Layout /> } else return <AuthorizationPage />
 }
 
-export default MainPage
+export default MainPage;

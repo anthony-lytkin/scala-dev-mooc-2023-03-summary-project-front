@@ -1,7 +1,10 @@
-import styled from 'styled-components';
-import { colors } from '.';
+import styled from "styled-components";
 
-export const LayoutArea = styled.div`
-    display: flex;
-    background: `${colors.}`
+export const LayoutInner = styled.div`
+  margin: -8px;
 `;
+
+export const LayoutContent = styled.div`
+  padding: 10px;
+`;
+

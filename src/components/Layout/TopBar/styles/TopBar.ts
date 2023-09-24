@@ -1,6 +1,16 @@
 import { styled } from "styled-components";
+import { colors, sizes } from "../../../../assets/styles/theme";
 
 export const TopBarInner = styled.div`
-    height: 100px;
-    font-size: large;
-`
+  height: 50px;
+  font-size: large;
+  background-color: ${colors.lightGray};
+  box-shadow: 2px 2px 2px ${colors.lightGray};
+`;
+
+export const TopBarApplicationName = styled.div`
+  padding: 10px 30px 10px 20px;
+  font-size: ${sizes.XL};
+  display: inline-block;
+  font-weight: bold;
+`;

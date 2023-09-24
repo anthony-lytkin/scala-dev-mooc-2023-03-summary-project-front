@@ -1,12 +1,17 @@
-import React from 'react'
-import { LayoutArea } from './styles/Layout'
+import React from "react";
+import { LayoutContent, LayoutInner } from "./styles/Layout";
+import TopBar from "./TopBar/TopBar";
+import { isAuthorized } from "../../core/constants/global";
 
 const Layout: React.FC = () => {
+  return (
+    <LayoutInner>
+      <TopBar />
+      <LayoutContent>
 
-    return <LayoutArea>
-        Test page
-        </LayoutArea>
- 
-}
+      </LayoutContent>
+    </LayoutInner>
+  )
+};
 
-export default React.memo(Layout)
+export default React.memo(Layout);

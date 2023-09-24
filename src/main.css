@@ -1,6 +1,13 @@
-.test {
+/* .test {
     height: 100px;
     font-size: large;
     background-color: #e5f7f7;
+    background-color: ;
 
+} */
+
+.test {
+    font-size: 10px;
+    background-color: #d1d3d3;
+    box-shadow: 2px 2px 2px ;
 }
