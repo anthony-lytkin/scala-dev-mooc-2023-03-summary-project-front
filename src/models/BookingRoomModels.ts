@@ -14,8 +14,9 @@ export interface UserBookingDTO {
 }
 
 export interface BookingDTO {
-    roomId: string,
-    bookedByUser: string | undefined,
+    bookingId: string | null,
+    iserId: string | null,
+    bookedByUser: string | null,
     startTime: number,
     endTime: number,
 }
@@ -33,3 +34,13 @@ export interface CreateBookingDTO {
     startTime: number,
     endTime: number,
 }
+
+export interface BookingBox {
+    bookingId: string | null
+    roomId: string
+    time: number,
+    isBooked: boolean,
+    isBookedByUser: boolean
+}
+
+export type RoomInfo = CreateBookingDTO

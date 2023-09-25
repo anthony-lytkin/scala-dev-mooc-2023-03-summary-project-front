@@ -1,5 +1,9 @@
 export const colors = {
-  lightGray: "#d1d3d3",
+  lightGrey: "#d1d3d3",
+  grey: "#acacac",
+  black: "#000000",
+  green: "#8ce0a4",
+  red: "#fa7268",
 };
 
 export enum sizes {

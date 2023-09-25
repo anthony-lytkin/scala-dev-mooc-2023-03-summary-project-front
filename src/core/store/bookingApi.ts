@@ -3,8 +3,10 @@ import {
   BookingRoomDetailsDTO,
   CreateBookingDTO,
   MeetingRoomDTO,
+  RoomInfo,
   UserBookingDTO,
 } from "../../models/BookingRoomModels";
+import { userId } from "../constants/global";
 
 export const bookingApi = createApi({
   reducerPath: "BookingApi",
@@ -12,27 +14,27 @@ export const bookingApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.APP_REST_API as string }),
   endpoints: (build) => ({
     getDepartmentRooms: build.query<Array<MeetingRoomDTO>, string>({
-      query: (depId) => `department/${depId}/rooms`,
+      query: (depId) => `http://localhost:8080/api/v1/department/${depId}/rooms`,
       providesTags: [{ type: "MeetingRooms", id: "LIST" }],
     }),
     getUserBookingsList: build.query<Array<UserBookingDTO>, string>({
       query: (userId) => `user/${userId}/bookingList`,
       providesTags: [{ type: "UserBookings", id: "LIST" }],
     }),
-    getBookingRoomDetails: build.query<Array<BookingRoomDetailsDTO>, string>({
-      query: (roomId) => `room/${roomId}/bookingDetails`,
+    getBookingRoomDetails: build.query<BookingRoomDetailsDTO, RoomInfo>({
+      query: (RoomInfo) => `http://localhost:8080/api/v1/room/${RoomInfo.roomId}/bookingDetails/${RoomInfo.startTime}/${RoomInfo.endTime}`,
       providesTags: [{ type: "BookingDetails", id: "LIST" }],
     }),
-    addUserBookingRoom: build.mutation<UserBookingDTO, { data: CreateBookingDTO; roomId: string }>({
-      query: ({ data, roomId }) => ({
-        url: `user/${roomId}/bookRoom`,
+    addUserBookingRoom: build.mutation<UserBookingDTO, { body: CreateBookingDTO; userId: string }>({
+      query: ({ body, userId }) => ({
+        url: `http://localhost:8080/api/v1/user/${userId}/bookRoom`,
         method: "POST",
-        body: data,
+        body: body,
       }),
     }),
     deleteUserBookingRoom: build.mutation<any, string>({
         query: (bookingId) => ({
-          url: `booking/${bookingId}`,
+          url: `http://localhost:8080/api/v1/booking/${bookingId}`,
           method: "DELETE",
         }),
         invalidatesTags: [{type: 'UserBookings', id: 'LIST'}]

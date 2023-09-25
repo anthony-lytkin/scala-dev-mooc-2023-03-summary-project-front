@@ -4,8 +4,8 @@ import { colors, sizes } from "../../../../assets/styles/theme";
 export const TopBarInner = styled.div`
   height: 50px;
   font-size: large;
-  background-color: ${colors.lightGray};
-  box-shadow: 2px 2px 2px ${colors.lightGray};
+  background-color: ${colors.lightGrey};
+  box-shadow: 2px 2px 2px ${colors.lightGrey};
 `;
 
 export const TopBarApplicationName = styled.div`

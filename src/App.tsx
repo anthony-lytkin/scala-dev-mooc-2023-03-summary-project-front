@@ -2,7 +2,7 @@ import React from 'react'
 import {Provider} from 'react-redux'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
-import { authorizationPage, indexPage } from './core/routes'
+import { authorizationPage, bookingPage, indexPage } from './core/routes'
 
 import MainPage from './pages/MainPage';
 
@@ -10,6 +10,7 @@ import {store} from './core/store';
 
 import { GlobalStyles } from './assets/styles/global'
 import AuthorizationPage from './pages/AuthorizationPage';
+import BookingPage from './pages/BookingPage';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Routes>
                     <Route path={indexPage} element={<MainPage />} />
                     <Route path={authorizationPage} element={<AuthorizationPage />} />
+                    <Route path={bookingPage} element={<BookingPage />} />
                 </Routes>
             </BrowserRouter>
             <GlobalStyles />

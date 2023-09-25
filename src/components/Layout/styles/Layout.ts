@@ -6,5 +6,6 @@ export const LayoutInner = styled.div`
 
 export const LayoutContent = styled.div`
   padding: 10px;
+  height: 100%;
 `;
 
